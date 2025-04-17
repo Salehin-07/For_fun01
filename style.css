@@ -1,0 +1,81 @@
+/* for all pages */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-color: #4d4861;
+}
+nav {
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  color: snow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#logo{
+  height: 50px;
+  width:50px;
+  border-radius: 50%;
+  background-image: url('/');
+  background-size: cover;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li{
+  margin:0px 10px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: snow;
+}
+.menu-toggle{
+  display: none;
+  cursor: pointer;
+}
+#navbar{
+  height: 50px;
+  width: 100%;
+}
+@media screen and (max-width: 768px){
+  nav ul {
+    visibility: hidden;
+    height:50%;
+    flex-direction: column;
+    position: fixed;
+    top:60px;
+    right: 0px;
+    background: #121212;
+    width: 100%;
+    text-align: center;
+    opacity: 0.5;
+    transform: translateY(-20px);
+    transition: opacity 0.1s , transform 0.1s ease-in , visibility 0.1s ease-in;
+  }
+  nav ul li{
+    margin-top: 50px;
+    
+  }
+  nav ul.active{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .menu-toggle{
+    display:block;
+    cursor:pointer;
+    font-size: 30px;
+    margin-right:  5px;
+    padding: 0px 5px;
+  }
+  nav:has(ul.active) {
+    position:fixed;
+    top: 0px;
+    background-color: #121212;
+  }
+}
+/* for index.html page */
